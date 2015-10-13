@@ -23,7 +23,8 @@ fi
 
 printf "${BLUE}%s${NORMAL}\n" "Upgrading Oh My Zsh"
 cd "$ZSH"
-if git pull --rebase --stat origin master
+git fetch upstream
+if git merge upstream/master
 then
   printf '%s' "$GREEN"
   printf '%s\n' '         __                                     __   '
